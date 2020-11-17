@@ -9,10 +9,12 @@
 
 <style>
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 1rem;
 		margin: 0 auto;
+		min-height: 600px;
+		width: 80%;
 	}
 
 	h1 {
@@ -20,11 +22,6 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
+		text-align: center;
 	}
 </style>
