@@ -9,8 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30rem;
-    height: 30rem;
+    width: 80vw;
+    height: 80vw;
+    max-width: 450px;
+    max-height: 450px;
     border: 1px solid red;
     background-color: beige;
     border-radius: 50%;

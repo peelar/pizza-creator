@@ -3,6 +3,7 @@
 
 <style>
   div {
+    flex: 1;
     border: 1px solid papayawhip;
     padding: 1rem;
   }
