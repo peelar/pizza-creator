@@ -28,7 +28,7 @@
 </style>
 
 <header>
-  <h1>Let's make pizza</h1>
+  <h1>Let's make pizza with Svelte</h1>
 </header>
 <main>
   <Display />
