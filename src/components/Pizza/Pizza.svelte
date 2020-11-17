@@ -1,13 +1,7 @@
 <script lang="ts">
   import type { Topping } from '../../../types';
-  import { getToppingsSum } from '../../../helpers';
 
-  export let toppings: Topping[] = [
-    { type: 'cheese', price: 2 },
-    { type: 'ham', price: 4 },
-    { type: 'cheese', price: 3 },
-  ];
-  $: toppingsSum = getToppingsSum(toppings);
+  export let toppings: Topping[];
 </script>
 
 <style>
@@ -25,7 +19,7 @@
 
 <div>
   <ul>
-    {#each toppingsSum as topping}
+    {#each toppings as topping}
       <li>{topping.type}</li>
     {/each}
   </ul>
