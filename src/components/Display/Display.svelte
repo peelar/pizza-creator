@@ -1,13 +1,9 @@
 <script lang="ts">
+  export let toppings: Topping[] = [];
+  import Pizza from '../Pizza/Pizza.svelte';
   import { getToppingsSum } from '../../../helpers';
   import type { Topping } from '../../../types';
-  import Pizza from '../Pizza/Pizza.svelte';
 
-  let toppings: Topping[] = [
-    { type: 'cheese', price: 2 },
-    { type: 'ham', price: 4 },
-    { type: 'cheese', price: 3 },
-  ];
   $: toppingsSum = getToppingsSum(toppings);
 </script>
 

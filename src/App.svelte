@@ -1,6 +1,13 @@
 <script lang="ts">
   import Display from './components/Display/Display.svelte';
   import Creator from './components/Creator/Creator.svelte';
+  import type { Topping } from '../types';
+
+  let toppings: Topping[] = [
+    { type: 'cheese', price: 2 },
+    { type: 'ham', price: 4 },
+    { type: 'cheese', price: 3 },
+  ];
 </script>
 
 <style>
@@ -31,6 +38,6 @@
   <h1>Let's make pizza with Svelte</h1>
 </header>
 <main>
-  <Display />
-  <Creator />
+  <Display {toppings} />
+  <Creator {toppings} />
 </main>
