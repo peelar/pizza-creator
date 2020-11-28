@@ -32,6 +32,8 @@
     flex-direction: column;
     align-items: center;
     list-style: none;
+    max-height: 90%;
+    overflow: scroll;
   }
 </style>
 
