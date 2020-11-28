@@ -1,4 +1,7 @@
+export type ToppingType = 'cheese' | 'ham';
+
 export type Topping = {
-  type: 'cheese' | 'ham';
+  id: string;
+  type: ToppingType;
   price: number;
 };
