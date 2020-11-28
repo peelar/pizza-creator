@@ -4,10 +4,11 @@
   import Creator from './components/Creator/Creator.svelte';
   import type { Topping, ToppingType } from '../types';
 
-  const types = ['cheese', 'ham'] as ToppingType[];
+  const types = ['cheese', 'ham', 'pineapple'] as ToppingType[];
   const toppingPrices: Record<ToppingType, number> = {
     ham: 3,
     cheese: 2,
+    pineapple: 5,
   };
   let toppings: Topping[] = [];
 

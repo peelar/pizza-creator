@@ -1,4 +1,4 @@
-export type ToppingType = 'cheese' | 'ham';
+export type ToppingType = 'cheese' | 'ham' | 'pineapple';
 
 export type Topping = {
   id: string;
