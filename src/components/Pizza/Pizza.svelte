@@ -23,8 +23,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 1rem 2rem;
     background-color: darksalmon;
+    cursor: pointer;
   }
 
   ul {
@@ -40,7 +42,7 @@
 <div>
   <ul>
     {#each toppings as topping}
-      <li><button on:click={() => removeTopping(topping.id)}> {topping.type} </button></li>
+      <li><button on:click={() => removeTopping(topping.id)}> {topping.type} ❌</button></li>
     {/each}
   </ul>
 </div>
