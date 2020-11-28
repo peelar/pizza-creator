@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { Topping } from '../../../types';
-  export let toppings: Topping[] = [];
-  $: toppingTypes = Array.from(new Set(toppings.reduce((prev, next) => [...prev, next.type], [])));
+  import type { Topping, ToppingType } from '../../../types';
+
+  export let types: Topping['type'][] = [];
+  export let addTopping: (type: ToppingType) => void;
 </script>
 
 <style>
@@ -19,5 +20,5 @@
 
 <div>
   <h4>Customize</h4>
-  {#each toppingTypes as type}<button>{type}</button>{/each}
+  {#each types as type}<button on:click={() => addTopping(type)}>{type}</button>{/each}
 </div>

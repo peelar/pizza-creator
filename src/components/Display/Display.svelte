@@ -1,8 +1,9 @@
 <script lang="ts">
-  export let toppings: Topping[] = [];
   import Pizza from '../Pizza/Pizza.svelte';
   import { getToppingsSum } from '../../../helpers';
   import type { Topping } from '../../../types';
+  export let toppings: Topping[] = [];
+  export let removeTopping: (id: string) => void;
 
   $: toppingsSum = getToppingsSum(toppings);
 </script>
@@ -20,7 +21,7 @@
 </style>
 
 <div>
-  <Pizza {toppings} />
+  <Pizza {toppings} {removeTopping} />
 
   <h4>Sum</h4>
   <ul>

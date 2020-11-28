@@ -2,6 +2,7 @@
   import type { Topping } from '../../../types';
 
   export let toppings: Topping[];
+  export let removeTopping: (id: string) => void;
 </script>
 
 <style>
@@ -17,12 +18,27 @@
     background-color: beige;
     border-radius: 50%;
   }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background-color: darksalmon;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+  }
 </style>
 
 <div>
   <ul>
     {#each toppings as topping}
-      <li>{topping.type}</li>
+      <li><button on:click={() => removeTopping(topping.id)}> {topping.type} </button></li>
     {/each}
   </ul>
 </div>

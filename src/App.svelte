@@ -1,13 +1,24 @@
 <script lang="ts">
+  import { v4 } from 'uuid';
   import Display from './components/Display/Display.svelte';
   import Creator from './components/Creator/Creator.svelte';
-  import type { Topping } from '../types';
+  import type { Topping, ToppingType } from '../types';
 
-  let toppings: Topping[] = [
-    { type: 'cheese', price: 2 },
-    { type: 'ham', price: 4 },
-    { type: 'cheese', price: 3 },
-  ];
+  const types = ['cheese', 'ham'] as ToppingType[];
+  const toppingPrices: Record<ToppingType, number> = {
+    ham: 3,
+    cheese: 2,
+  };
+  let toppings: Topping[] = [];
+
+  const addTopping = (type: ToppingType) => {
+    const topping = { type, price: toppingPrices[type], id: v4() };
+    toppings = [...toppings, topping];
+  };
+
+  const removeTopping = (id: string) => {
+    toppings = [...toppings].filter((topping) => topping.id !== id);
+  };
 </script>
 
 <style>
@@ -38,6 +49,6 @@
   <h1>Let's make pizza with Svelte</h1>
 </header>
 <main>
-  <Display {toppings} />
-  <Creator {toppings} />
+  <Display {toppings} {removeTopping} />
+  <Creator {types} {addTopping} />
 </main>
