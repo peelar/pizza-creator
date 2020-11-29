@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Topping } from '../../../types';
+  import Ingredient from '../Ingredient/Ingredient.svelte';
 
   export let toppings: Topping[];
   export let removeTopping: (id: string) => void;
@@ -19,16 +20,6 @@
     border-radius: 50%;
   }
 
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem 2rem;
-    background-color: darksalmon;
-    cursor: pointer;
-  }
-
   ul {
     display: flex;
     flex-direction: column;
@@ -42,7 +33,7 @@
 <div>
   <ul>
     {#each toppings as topping}
-      <li><button on:click={() => removeTopping(topping.id)}> {topping.type} ❌</button></li>
+      <Ingredient {topping} {removeTopping} />
     {/each}
   </ul>
 </div>
