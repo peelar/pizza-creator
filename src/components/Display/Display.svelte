@@ -1,6 +1,7 @@
 <script lang="ts">
   import Pizza from '../Pizza/Pizza.svelte';
   import { getToppingsSum } from '../../../helpers';
+
   import type { Topping } from '../../../types';
   export let toppings: Topping[] = [];
   export let removeTopping: (id: string) => void;

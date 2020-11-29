@@ -2,7 +2,8 @@
   "extends": "@tsconfig/svelte/tsconfig.json",
   "include": [
     "src",
-    "helpers.ts"
+    "helpers.ts",
+    "defaults.ts"
   ],
   "exclude": [
     "node_modules/*",

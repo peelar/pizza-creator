@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { Topping, ToppingType } from '../../../types';
+  import type { ToppingType } from '../../../types';
+  import { types } from '../../../defaults';
 
-  export let types: Topping['type'][] = [];
   export let addTopping: (type: ToppingType) => void;
 </script>
 
