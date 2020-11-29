@@ -6,8 +6,8 @@
   export let toppings: Topping[] = [];
   export let removeTopping: (id: string) => void;
 
-  $: toppingsTypesSum = getToppingsSum(toppings);
-  $: toppingSum = Object.values(toppingsTypesSum).reduce((prev, next) => prev + next.sum, 0);
+  $: typesSum = getToppingsSum(toppings);
+  $: sum = Object.values(typesSum).reduce((prev, next) => prev + next.sum, 0);
 </script>
 
 <style>
@@ -27,9 +27,9 @@
 
   <h4>Sum</h4>
   <ul>
-    {#each Object.keys(toppingsTypesSum) as key}
-      <li>{key}[{toppingsTypesSum[key].amount}]: {toppingsTypesSum[key].sum}$</li>
+    {#each Object.keys(typesSum) as key}
+      <li>{key}[{typesSum[key].amount}]: {typesSum[key].sum}$</li>
     {/each}
   </ul>
-  <h5>Total: ${toppingSum}</h5>
+  <h5>Total: ${sum}</h5>
 </div>
